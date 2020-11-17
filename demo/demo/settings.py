@@ -151,18 +151,18 @@ PLOTLY_DASH = {
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'demo', 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'demo', 'static'),
-    ]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'demo', 'static'),
+#     ]
 
 # Caching - demo uses redis as this is present due to channels use
 
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "redis://host.docker.internal:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
@@ -176,7 +176,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [('127.0.0.1', 6379),],
+            'hosts': [('host.docker.internal', 6379),],
         },
     },
 }

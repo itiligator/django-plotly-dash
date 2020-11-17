@@ -8,6 +8,6 @@ RUN pip3 install -r l.txt
 COPY . /home/plotlyDash
 RUN python3 setup.py develop
 WORKDIR /home/plotlyDash/demo
-RUN python3 manage.py migrate && python3 manage.py shell < configdb.py && python3 manage.py collectstatic -i "*.py" -i "*.pyc" --noinput --link
+RUN python3 manage.py migrate && python3 manage.py shell < configdb.py && python3 manage.py collectstatic --noinput --link
 EXPOSE 80
-ENTRYPOINT  python3 manage.py runserver 127.0.0.1:80 --nostatic
+ENTRYPOINT  python3 manage.py runserver 0.0.0.0:80 --nostatick
