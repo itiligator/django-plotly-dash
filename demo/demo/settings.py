@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Vancouver'
+TIME_ZONE = 'Asia/Omsk'
 
 USE_I18N = True
 
