@@ -1,4 +1,4 @@
-from python:3.6
+FROM python:3.6
 WORKDIR /home/plotlyDash
 #COPY ./requirements.txt /home/plotlyDash/requirements.txt
 #COPY ./dev_requirements.txt /home/plotlyDash/dev_requirements.txt
